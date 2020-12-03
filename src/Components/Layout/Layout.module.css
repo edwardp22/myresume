@@ -1,8 +1,14 @@
 :root {
-    --menuWidth: 100px;
+    --menuWidth: 150px;
+    --topBarHeight: 50px;
 }
 
 /* Slide right Animation */
+.slideRight {
+    -webkit-animation: slideRight 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+            animation: slideRight 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
 @-webkit-keyframes slideRight {
     0% {
     -webkit-transform: translateX(calc(0px - var(--menuWidth)));
@@ -26,6 +32,35 @@
 }
 /* Slide right Animation */
 
+/* Slide left Animation */
+.slideLeft {
+    -webkit-animation: slideLeft 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	        animation: slideLeft 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+@-webkit-keyframes slideLeft {
+    0% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    }
+    100% {
+    -webkit-transform: translateX(calc(0px - var(--menuWidth)));
+            transform: translateX(calc(0px - var(--menuWidth)));
+    }
+}
+
+@keyframes slideLeft {
+    0% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    }
+    100% {
+    -webkit-transform: translateX(calc(0px - var(--menuWidth)));
+            transform: translateX(calc(0px - var(--menuWidth)));
+    }
+}
+/* Slide left Animation */
+
 .mainContainer {
     width: 100%;
     height: 100%;
@@ -34,18 +69,23 @@
 
 .topBar {
     width: 100%;
-    height: 50px;
+    height: var(--topBarHeight);
     position: absolute;
     top: 0px;
     left: 0px;
-    z-index: 1;
+    z-index: 2;
 }
 
 .menu {
+    top: var(--topBarHeight);
     width: var(--menuWidth);
+    line-height: 100%;
     height: 100%;
     min-height: 100vh;
     position: fixed;
+    text-align: center;
+    z-index: 1;
+    background-color: white;
 }
 
 .container {
@@ -57,15 +97,18 @@
     z-index: 0;
 }
 
-@media only screen and (min-width: 601px) {
-    .menu {
-        -webkit-animation: slideRight 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-                animation: slideRight 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-    }
+.containerFullWidth {
+    left: 0; 
+    width: 100%;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 599px) {
+    .container {
+        left: 0; 
+        width: 100%;
+    }
+
     .menu {
-        display: none;
+        --menuWidth: 100%;
     }
 }

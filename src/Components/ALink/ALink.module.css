@@ -1,0 +1,20 @@
+.link {
+    color: black;
+    background-color: #f2f3f5;
+    text-decoration: none;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.link:hover {
+    background-color: #0563bb; 
+    color: white;
+}
+
+.active {
+    background-color: #0563bb; 
+}
+
+.icon {
+    padding: 10px;
+}
