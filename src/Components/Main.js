@@ -1,6 +1,6 @@
 import React from 'react';
 import Layout from './Layout/Layout';
-import Header from './Header/Header';
+import Home from './Home/Home';
 
 const links = [
     {
@@ -20,6 +20,10 @@ const links = [
         icon: 'work'
     },
     {
+        text: 'This Page',
+        icon: 'build'
+    },
+    {
         text: 'Contact',
         icon: 'contact_mail'
     }
@@ -31,7 +35,7 @@ export default function Main() {
     return (
         <generalContext.Provider value={{ links }}>
             <Layout>
-                <Header>fff</Header>
+                <Home />
             </Layout>
         </generalContext.Provider>
     )

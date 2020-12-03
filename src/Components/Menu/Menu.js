@@ -3,7 +3,7 @@ import classes from './Menu.module.css';
 import { Link } from '../ALink/ALink';
 import { generalContext } from '../Main';
 
-export default function Menu() {
+export default function Menu({ toggleMenu }) {
     const { links } = useContext(generalContext);
 
     return (
@@ -11,11 +11,11 @@ export default function Menu() {
             <li className={classes.menu}>
                 {links.map(link => {                    
                     return (
-                        <span id={link.text}>
+                        <span key={link.text}>
                             <Link 
                                 borderRadius='50px' 
                                 text={link.text} 
-                                onClick={() => {}} 
+                                onClick={toggleMenu} 
                                 icon={link.icon}
                             />
                         </span>

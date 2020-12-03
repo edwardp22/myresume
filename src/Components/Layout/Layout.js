@@ -20,10 +20,10 @@ export default function Layout({ children }) {
             </div>
 
             <div className={[classes.menu, (isMenuClosed ? classes.slideLeft : classes.slideRight)].join(' ')}>
-                <Menu />
+                <Menu toggleMenu={toggleMenu} />
             </div>
 
-            <div className={[classes.container, (isMenuClosed ? classes.containerFullWidth : '')].join(' ')}>
+            <div className={classes.container}>
                 {children}
             </div>
         </div>
