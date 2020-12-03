@@ -7,21 +7,19 @@ export default function Menu({ toggleMenu }) {
     const { links } = useContext(generalContext);
 
     return (
-        <ul className={classes.menu}>
-            <li className={classes.menu}>
-                {links.map(link => {                    
-                    return (
-                        <span key={link.text}>
-                            <Link 
-                                borderRadius='50px' 
-                                text={link.text} 
-                                onClick={toggleMenu} 
-                                icon={link.icon}
-                            />
-                        </span>
-                    )
-                })}                
-            </li>
+        <ul className={classes.ul}>            
+            {links.map(link => {                    
+                return (
+                    <li key={link.text}>
+                        <Link 
+                            borderRadius='50px' 
+                            text={link.text} 
+                            onClick={toggleMenu} 
+                            icon={link.icon}
+                        />
+                    </li>
+                )
+            })}
         </ul>
     )
 }

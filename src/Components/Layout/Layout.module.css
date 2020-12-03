@@ -1,6 +1,7 @@
 :root {
     --menuWidth: 150px;
     --topBarHeight: 50px;
+    --margins: 20px;
 }
 
 /* Slide right Animation */
@@ -11,8 +12,8 @@
 
 @-webkit-keyframes slideRight {
     0% {
-    -webkit-transform: translateX(calc(0px - var(--menuWidth)));
-            transform: translateX(calc(0px - var(--menuWidth)));
+    -webkit-transform: translateX(calc(0px - calc(var(--menuWidth) + var(--margins))));
+            transform: translateX(calc(0px - calc(var(--menuWidth) + var(--margins))));
     }
     100% {
     -webkit-transform: translateX(0);
@@ -22,8 +23,8 @@
 
 @keyframes slideRight {
     0% {
-    -webkit-transform: translateX(calc(0px - var(--menuWidth)));
-            transform: translateX(calc(0px - var(--menuWidth)));
+    -webkit-transform: translateX(calc(0px - calc(var(--menuWidth) + var(--margins))));
+            transform: translateX(calc(0px - calc(var(--menuWidth) + var(--margins))));
     }
     100% {
     -webkit-transform: translateX(0);
@@ -44,8 +45,8 @@
             transform: translateX(0);
     }
     100% {
-    -webkit-transform: translateX(calc(0px - var(--menuWidth)));
-            transform: translateX(calc(0px - var(--menuWidth)));
+    -webkit-transform: translateX(calc(0px - calc(var(--menuWidth) + var(--margins))));
+            transform: translateX(calc(0px - calc(var(--menuWidth) + var(--margins))));
     }
 }
 
@@ -55,8 +56,8 @@
             transform: translateX(0);
     }
     100% {
-    -webkit-transform: translateX(calc(0px - var(--menuWidth)));
-            transform: translateX(calc(0px - var(--menuWidth)));
+    -webkit-transform: translateX(calc(0px - calc(var(--menuWidth) + var(--margins))));
+            transform: translateX(calc(0px - calc(var(--menuWidth) + var(--margins))));
     }
 }
 /* Slide left Animation */
@@ -77,7 +78,6 @@
 }
 
 .menu {
-    top: var(--topBarHeight);
     width: var(--menuWidth);
     line-height: 100%;
     height: 100%;
@@ -86,6 +86,7 @@
     text-align: center;
     z-index: 1;
     background-color: white;
+    padding: 50px calc(var(--margins) / 2);
 }
 
 .container {
@@ -99,6 +100,6 @@
 
 @media only screen and (max-width: 599px) {
     .menu {
-        --menuWidth: 100%;
+        --menuWidth: calc(100% - var(--margins));
     }
 }

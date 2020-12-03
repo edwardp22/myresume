@@ -14,7 +14,7 @@ export const Link = ({ text, icon, borderRadius = '0px', active = false, onClick
         <a
             style={{ borderRadius: borderRadius, padding: '10px' }}
             className={[classes.link, (active ? classes.active : '')].join(' ')}
-            onClick={() => onClick()}
+            onClick={() => window.innerWidth < 600 ? onClick() : null}
             href={'#' + text}
         >
             <i className={[classes.icon, 'material-icons'].join(' ')}>{icon}</i>
