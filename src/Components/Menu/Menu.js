@@ -16,6 +16,7 @@ export default function Menu({ toggleMenu }) {
                             text={link.text} 
                             onClick={toggleMenu} 
                             icon={link.icon}
+                            linkRoute={link.link}
                         />
                     </li>
                 )

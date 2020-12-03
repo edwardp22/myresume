@@ -1,42 +1,54 @@
 import React from 'react';
+import {Switch, Route, Redirect, withRouter} from 'react-router-dom';
 import Layout from './Layout/Layout';
 import Home from './Home/Home';
 
 const links = [
     {
         text: 'Home',
-        icon: 'home'
+        icon: 'home',
+        link: '/Home'
     },
     {
         text: 'About',
-        icon: 'person'
+        icon: 'person',
+        link: '/About'
     },
     {
         text: 'Resume',
-        icon: 'library_books'
+        icon: 'library_books',
+        link: '/Resume'
     },
     {
         text: 'Portfolio',
-        icon: 'work'
+        icon: 'work',
+        link: '/Portfolio'
     },
     {
         text: 'This Page',
-        icon: 'build'
+        icon: 'build',
+        link: '/Page'
     },
     {
         text: 'Contact',
-        icon: 'contact_mail'
+        icon: 'contact_mail',
+        link: '/Contact'
     }
 ]
 
 export const generalContext = React.createContext();
 
-export default function Main() {
+const Main = () => {
     return (
         <generalContext.Provider value={{ links }}>
             <Layout>
-                <Home />
+                <Switch>
+                    <Route exact path="/Home" component={Home} />
+                    <Redirect to="/Home" />
+                </Switch>
             </Layout>
         </generalContext.Provider>
     )
 }
+
+export default withRouter(Main);

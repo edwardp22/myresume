@@ -75,6 +75,7 @@
     top: 0px;
     left: 0px;
     z-index: 2;
+    display: none;
 }
 
 .menu {
@@ -101,5 +102,9 @@
 @media only screen and (max-width: 599px) {
     .menu {
         --menuWidth: calc(100% - var(--margins));
+    }
+
+    .topBar {
+        display: block;
     }
 }
