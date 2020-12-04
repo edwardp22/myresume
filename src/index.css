@@ -17,6 +17,10 @@ code {
   box-sizing: border-box;
 }
 
+p {
+  text-align: justify;
+}
+
 h1 { 
   font-family: 'Droid serif', serif; 
   font-size: 36px; 

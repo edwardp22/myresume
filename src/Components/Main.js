@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import {Switch, Route, Redirect, withRouter} from 'react-router-dom';
+import { Switch, Route, Redirect, withRouter } from 'react-router-dom';
+import { ToastContainer } from 'react-toastify';
 import Layout from './Layout/Layout';
 import Home from './Home/Home';
 import Portfolio from './Portfolio/Portfolio';
@@ -39,10 +40,12 @@ const Main = () => {
 
     return (
         <generalContext.Provider value={{ links, activeLink }}>
+            <ToastContainer />
+
             <Layout>
                 <Switch>
-                    <Route exact path='/Home' component={() => {setActiveLink('/Home'); return <Home />;}} />
-                    <Route exact path='/Portfolio' component={() => {setActiveLink('/Portfolio'); return <Portfolio />;}} />
+                    <Route exact path='/Home' component={() => { setActiveLink('/Home'); return <Home />; }} />
+                    <Route exact path='/Portfolio' component={() => { setActiveLink('/Portfolio'); return <Portfolio />; }} />
                     <Redirect to='/Home' />
                 </Switch>
             </Layout>

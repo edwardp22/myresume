@@ -185,11 +185,11 @@
     margin: auto;
     width: 80%;
     display: table;
-    height: 100%;
     background: url('https://microlancer.lancerassets.com/v2/services/8b/81b100303211e7af599dd6b842b728/large_11.jpg') center;
     background-size: cover;
     -webkit-animation: fadeIn ease 2s;
     animation: fadeIn ease 2s;
+    height: calc(100vh - calc(var(--topBarHeight) * 2));
 }
 
 .container::before {
