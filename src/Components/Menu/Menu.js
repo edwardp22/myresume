@@ -1,7 +1,12 @@
 import React, { useContext } from 'react';
 import classes from './Menu.module.css';
+import PropTypes from 'prop-types';
 import Link from '../ALink/ALink';
 import { generalContext } from '../Main';
+
+Menu.propTypes = {
+    toggleMenu: PropTypes.func
+}
 
 export default function Menu({ toggleMenu = ()=>{} }) {
     const { links, activeLink } = useContext(generalContext);
