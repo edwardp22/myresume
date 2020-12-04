@@ -24,7 +24,7 @@ export default function Layout({ children }) {
     const toggleMenu = () => setIsMenuClosed(isMenuClosed => !isMenuClosed);
 
     return (
-        <div className={classes.mainContainer}>
+        <>
             <div className={classes.topBar}>
                 <TopBar isMenuClosed={isMenuClosed} toggleMenu={toggleMenu} />
             </div>
@@ -36,6 +36,6 @@ export default function Layout({ children }) {
             <div className={classes.container}>
                 {children}
             </div>
-        </div>
+        </>
     )
 }

@@ -10,11 +10,6 @@ const links = [
         link: '/Home'
     },
     {
-        text: 'About',
-        icon: 'person',
-        link: '/About'
-    },
-    {
         text: 'Resume',
         icon: 'library_books',
         link: '/Resume'
