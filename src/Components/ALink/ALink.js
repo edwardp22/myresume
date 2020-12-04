@@ -14,7 +14,7 @@ import { NavLink } from 'react-router-dom';
 export const Link = ({ text, icon, borderRadius = '0px', active = false, onClick, linkRoute }) => {
     return (
         <NavLink
-            style={{ borderRadius: borderRadius, padding: '10px' }}
+            style={{ borderRadius: borderRadius }}
             className={[classes.link, (active ? classes.active : '')].join(' ')}
             onClick={() => window.innerWidth < 600 ? onClick() : null}
             to={linkRoute}
