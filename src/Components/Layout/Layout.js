@@ -9,6 +9,16 @@ export default function Layout({ children }) {
     useEffect(() => {
         if (window.innerWidth < 600) setIsMenuClosed(true);
         else setIsMenuClosed(false);
+
+        window.addEventListener('resize', () => {
+            if (window.innerWidth < 600) setIsMenuClosed(true);
+            else setIsMenuClosed(false);
+        });
+
+        return window.removeEventListener('resize', () => {
+            if (window.innerWidth < 600) setIsMenuClosed(true);
+            else setIsMenuClosed(false);
+        });
     }, []);
 
     const toggleMenu = () => setIsMenuClosed(isMenuClosed => !isMenuClosed);
