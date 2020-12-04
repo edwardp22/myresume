@@ -8,7 +8,7 @@ export default function Home() {
         <div className={classes.container}>
             <div className={classes.data}>
                 <h1 className={classes.name}>Edward Peña</h1>
-                <h2 className={classes.title}>Web Developer</h2>
+                <h2 className={classes.title}>Movil - Web Developer</h2>
                 <IconButton size='small' className={classes.linkedin} onClick={() => window.open('https://www.linkedin.com/in/edward-abraham-peña-espinal-176aa965', '_blank')}>
                     <LinkedIn fontSize='default' />
                 </IconButton>
