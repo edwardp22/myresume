@@ -25,15 +25,15 @@ export default function Layout({ children }) {
 
     return (
         <>
-            <div className={classes.topBar}>
+            <div id='topBar' className={classes.topBar}>
                 <TopBar isMenuClosed={isMenuClosed} toggleMenu={toggleMenu} />
             </div>
 
-            <div className={[classes.menu, (isMenuClosed ? classes.slideLeft : classes.slideRight)].join(' ')}>
+            <div id='menu' className={[classes.menu, (isMenuClosed ? classes.slideLeft : classes.slideRight)].join(' ')}>
                 <Menu toggleMenu={toggleMenu} />
             </div>
 
-            <div className={classes.container}>
+            <div id='container' className={classes.container}>
                 {children}
             </div>
         </>
