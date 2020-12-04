@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import {Switch, Route, Redirect, withRouter} from 'react-router-dom';
 import Layout from './Layout/Layout';
 import Home from './Home/Home';
+import Portfolio from './Portfolio/Portfolio';
 
 const links = [
     {
@@ -41,6 +42,7 @@ const Main = () => {
             <Layout>
                 <Switch>
                     <Route exact path='/Home' component={() => {setActiveLink('/Home'); return <Home />;}} />
+                    <Route exact path='/Portfolio' component={() => {setActiveLink('/Portfolio'); return <Portfolio />;}} />
                     <Redirect to='/Home' />
                 </Switch>
             </Layout>

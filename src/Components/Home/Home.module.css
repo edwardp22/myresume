@@ -211,6 +211,7 @@
     -webkit-animation: tracking-in-contract-bck 1s cubic-bezier(0.680, -0.550, 0.265, 1.550) both;
             animation: tracking-in-contract-bck 1s cubic-bezier(0.680, -0.550, 0.265, 1.550) both;  
     margin-bottom: 1px;
+    text-align: left;
 }
 
 .title {
@@ -223,7 +224,7 @@
 
 .linkedin {
     -webkit-animation: bounce-in-right 1.1s 2.2s both;
-	        animation: bounce-in-right 1.1s 2.2s both;
+            animation: bounce-in-right 1.1s 2.2s both;
 }
 
 @media only screen and (max-width: 599px) {
