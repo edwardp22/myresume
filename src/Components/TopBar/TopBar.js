@@ -9,7 +9,7 @@ TopBar.propTypes = {
     toggleMenu: PropTypes.func.isRequired
 }
 
-export default function TopBar({ isMenuClosed, toggleMenu }) {
+export default function TopBar({ isMenuClosed = false, toggleMenu = ()=>{} }) {
     return (
         <IconButton size='medium' className={classes.menuButton} onClick={toggleMenu}>
             {isMenuClosed ? <Menu fontSize='default' /> : <Close fontSize='default' />}
