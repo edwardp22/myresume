@@ -12,16 +12,7 @@ Link.propTypes = {
     active: PropTypes.bool
 }
 
-/**
- * Customizable Link
- * @param {String} text text to show
- * @param {String} icon icon to show
- * @param {String} borderRadius is a rounded button
- * @param {Function} onClick function onClick
- * @param {String} linkRoute link of the page
- * @param {Boolean} active active link
- */
-export default function Link({ text, icon, borderRadius = '0px', onClick, linkRoute, active }) {
+export default function Link({ text = '', icon = '', borderRadius = '0px', onClick = ()=>{}, linkRoute = '#', active = false }) {
     return (
         <NavLink
             style={{ borderRadius: borderRadius }}
