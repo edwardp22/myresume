@@ -4,6 +4,7 @@
     text-decoration: none;
     margin-bottom: 8px;
     display: block;
+    border: 1px solid rgb(150, 150, 150);
 }
 
 .link:hover {
