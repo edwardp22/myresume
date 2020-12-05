@@ -42,154 +42,48 @@
 }
 
 @-webkit-keyframes swing-in-top-fwd {
-    0% {
-      -webkit-transform: rotateX(-100deg);
-              transform: rotateX(-100deg);
-      -webkit-transform-origin: top;
-              transform-origin: top;
-      opacity: 0;
-    }
-    100% {
-      -webkit-transform: rotateX(0deg);
-              transform: rotateX(0deg);
-      -webkit-transform-origin: top;
-              transform-origin: top;
-      opacity: 1;
-    }
+        0% {
+          -webkit-transform: rotateX(-100deg);
+                  transform: rotateX(-100deg);
+          -webkit-transform-origin: top;
+                  transform-origin: top;
+          opacity: 0;
+        }
+        100% {
+          -webkit-transform: rotateX(0deg);
+                  transform: rotateX(0deg);
+          -webkit-transform-origin: top;
+                  transform-origin: top;
+          opacity: 1;
+        }
 }
-  
+
 @keyframes swing-in-top-fwd {
-    0% {
-      -webkit-transform: rotateX(-100deg);
-              transform: rotateX(-100deg);
-      -webkit-transform-origin: top;
-              transform-origin: top;
-      opacity: 0;
-    }
-    100% {
-      -webkit-transform: rotateX(0deg);
-              transform: rotateX(0deg);
-      -webkit-transform-origin: top;
-              transform-origin: top;
-      opacity: 1;
-    }
-}
-
-@-webkit-keyframes bounce-in-right {
-    0% {
-      -webkit-transform: translateX(600px);
-              transform: translateX(600px);
-      -webkit-animation-timing-function: ease-in;
-              animation-timing-function: ease-in;
-      opacity: 0;
-    }
-    38% {
-      -webkit-transform: translateX(0);
-              transform: translateX(0);
-      -webkit-animation-timing-function: ease-out;
-              animation-timing-function: ease-out;
-      opacity: 1;
-    }
-    55% {
-      -webkit-transform: translateX(68px);
-              transform: translateX(68px);
-      -webkit-animation-timing-function: ease-in;
-              animation-timing-function: ease-in;
-    }
-    72% {
-      -webkit-transform: translateX(0);
-              transform: translateX(0);
-      -webkit-animation-timing-function: ease-out;
-              animation-timing-function: ease-out;
-    }
-    81% {
-      -webkit-transform: translateX(32px);
-              transform: translateX(32px);
-      -webkit-animation-timing-function: ease-in;
-              animation-timing-function: ease-in;
-    }
-    90% {
-      -webkit-transform: translateX(0);
-              transform: translateX(0);
-      -webkit-animation-timing-function: ease-out;
-              animation-timing-function: ease-out;
-    }
-    95% {
-      -webkit-transform: translateX(8px);
-              transform: translateX(8px);
-      -webkit-animation-timing-function: ease-in;
-              animation-timing-function: ease-in;
-    }
-    100% {
-      -webkit-transform: translateX(0);
-              transform: translateX(0);
-      -webkit-animation-timing-function: ease-out;
-              animation-timing-function: ease-out;
-    }
-}
-
-@keyframes bounce-in-right {
-    0% {
-      -webkit-transform: translateX(600px);
-              transform: translateX(600px);
-      -webkit-animation-timing-function: ease-in;
-              animation-timing-function: ease-in;
-      opacity: 0;
-    }
-    38% {
-      -webkit-transform: translateX(0);
-              transform: translateX(0);
-      -webkit-animation-timing-function: ease-out;
-              animation-timing-function: ease-out;
-      opacity: 1;
-    }
-    55% {
-      -webkit-transform: translateX(68px);
-              transform: translateX(68px);
-      -webkit-animation-timing-function: ease-in;
-              animation-timing-function: ease-in;
-    }
-    72% {
-      -webkit-transform: translateX(0);
-              transform: translateX(0);
-      -webkit-animation-timing-function: ease-out;
-              animation-timing-function: ease-out;
-    }
-    81% {
-      -webkit-transform: translateX(32px);
-              transform: translateX(32px);
-      -webkit-animation-timing-function: ease-in;
-              animation-timing-function: ease-in;
-    }
-    90% {
-      -webkit-transform: translateX(0);
-              transform: translateX(0);
-      -webkit-animation-timing-function: ease-out;
-              animation-timing-function: ease-out;
-    }
-    95% {
-      -webkit-transform: translateX(8px);
-              transform: translateX(8px);
-      -webkit-animation-timing-function: ease-in;
-              animation-timing-function: ease-in;
-    }
-    100% {
-      -webkit-transform: translateX(0);
-              transform: translateX(0);
-      -webkit-animation-timing-function: ease-out;
-              animation-timing-function: ease-out;
-    }
-}
+        0% {
+                -webkit-transform: rotateX(-100deg);
+                        transform: rotateX(-100deg);
+                -webkit-transform-origin: top;
+                        transform-origin: top;
+                opacity: 0;
+        }
+        100% {
+                -webkit-transform: rotateX(0deg);
+                        transform: rotateX(0deg);
+                -webkit-transform-origin: top;
+                        transform-origin: top;
+                opacity: 1;
+        }
+}      
 
 .container {
     margin: auto;
-    width: 80%;
-    display: table;
-    background: url('https://microlancer.lancerassets.com/v2/services/8b/81b100303211e7af599dd6b842b728/large_11.jpg') center;
+    width: 80%!important;
+    background: url('https://i.pinimg.com/originals/74/86/71/74867177cc3ae1aaf068979c14dea5c9.png') center;
     background-size: cover;
     -webkit-animation: fadeIn ease 2s;
     animation: fadeIn ease 2s;
     height: calc(100vh - calc(var(--topBarHeight) * 2));
+    z-index: 0;
 }
 
 .container::before {
@@ -200,11 +94,11 @@
     width: 100%;
     height: 100%;
     content: '';
+    z-index: 0;
 }
 
 .data {
-    display: table-cell;
-    vertical-align: middle;    
+    z-index: 1;
 }
 
 .name {
@@ -222,12 +116,11 @@
     margin-bottom: 1px;
 }
 
-.linkedin {
-    -webkit-animation: bounce-in-right 1.1s 2.2s both;
-            animation: bounce-in-right 1.1s 2.2s both;
-}
-
 @media only screen and (max-width: 599px) {
+    .name {
+        text-align: center;
+    }
+
     .container {
         padding: 5px;
     }
