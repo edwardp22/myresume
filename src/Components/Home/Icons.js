@@ -36,6 +36,12 @@ export const techIcons = [
         alt: 'React Redux'
     },
     {
+        src: 'https://www.typescriptlang.org/',
+        className: 'typescript',
+        img: '/Home/typescript.png',
+        alt: 'TypeScript'
+    },
+    {
         src: 'https://getbootstrap.com/',
         className: 'bootstrap',
         img: '/Home/bootstrap.png',
