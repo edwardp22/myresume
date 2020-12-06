@@ -3,7 +3,10 @@ import classes from './Layout.module.css';
 import TopBar from '../TopBar/TopBar';
 import Menu from '../Menu/Menu';
 
-export default function Layout({ children }) {
+export default function Layout(
+    { children } :
+    { children: JSX.Element }
+) {
     const [isMenuClosed, setIsMenuClosed] = useState(true);
 
     useEffect(() => {
