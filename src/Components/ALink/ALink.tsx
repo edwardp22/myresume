@@ -1,18 +1,11 @@
 import React from 'react';
 import classes from './ALink.module.css';
-import PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom';
 
-Link.propTypes = {
-    text: PropTypes.string,
-    icon: PropTypes.string,
-    borderRadius: PropTypes.string,
-    onClick: PropTypes.func,
-    linkRoute: PropTypes.string,
-    active: PropTypes.bool
-}
-
-export default function Link({ text = '', icon = '', borderRadius = '0px', onClick = ()=>{}, linkRoute = '#', active = false }) {
+export default function Link(
+    {text = '', icon = '', borderRadius = '0px', onClick, linkRoute = '#', active = false} :
+    {text?: string, icon?: string, borderRadius?: string, onClick?: Function, linkRoute?: string, active?: Boolean}
+): JSX.Element { 
     return (
         <NavLink
             style={{ borderRadius: borderRadius }}
@@ -24,4 +17,4 @@ export default function Link({ text = '', icon = '', borderRadius = '0px', onCli
             <div className={classes.text}>{text}</div> 
         </NavLink>
     )
-}
+};
