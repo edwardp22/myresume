@@ -1,15 +1,12 @@
 import React from 'react';
 import MaterialTable from 'material-table';
-import PropTypes from 'prop-types';
 import { Grid } from '@material-ui/core';
 
-MaterialTableCust.propTypes = {
-    data: PropTypes.array,
-    isLoading: PropTypes.bool,
-    setSelectedUser: PropTypes.func
-}
-
-export default function MaterialTableCust({ data = [], isLoading = false, setSelectedUser = ()=>{} }) {
+export default function MaterialTableCust(
+    { data = [], isLoading = false, setSelectedUser } 
+    // :
+    // { data?: any[], isLoading?: boolean, setSelectedUser: Function }
+) {
     return (
         <>
             <Grid item xs={12}>

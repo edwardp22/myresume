@@ -1,14 +1,11 @@
 import React from 'react';
 import { Grid } from '@material-ui/core';
-import PropTypes from 'prop-types';
 import { Doughnut } from 'react-chartjs-2';
 
-Chartjs2Cust.propTypes = {
-    data: PropTypes.object,
-    selectedUser: PropTypes.object
-}
-
-export default function Chartjs2Cust({ data = {}, selectedUser = {} }) {
+export default function Chartjs2Cust(
+    { data = {}, selectedUser = {} } :
+    { data?: any, selectedUser?: any }
+) {
     return (
         <>
             <Grid item xs={12}>

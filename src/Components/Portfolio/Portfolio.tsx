@@ -6,10 +6,10 @@ import MaterialTableCust from './MaterialTableCust';
 import Chartjs2Cust from './Chartjs2Cust';
 
 export default function Portfolio() {
-    const [isUserLoading, setIsUserLoading] = useState(false);
-    const [users, setUsers] = useState();
-    const [selectedUser, setSelectedUser] = useState();
-    const [todosGraph, setTodosGraph] = useState();
+    const [isUserLoading, setIsUserLoading] = useState<boolean>(false);
+    const [users, setUsers] = useState<any[]>();
+    const [selectedUser, setSelectedUser] = useState<any>();
+    const [todosGraph, setTodosGraph] = useState<any>();
 
     const getUsers = useCallback(() => {
         setIsUserLoading(true);
@@ -28,13 +28,13 @@ export default function Portfolio() {
         if (selectedUser) {
             fetch(`https://jsonplaceholder.typicode.com/todos?userId=${selectedUser.id}`)
             .then(response => response.json())
-            .then(json => { 
-                const graphState = {
+            .then((json: any[]) => { 
+                const graphState: any = {
                     labels: ['Completed', 'Pending'],
                     datasets: [{
                         data: [
-                            json.filter(todo => todo.completed).length, 
-                            json.filter(todo => !todo.completed).length
+                            json.filter((todo: any) => todo.completed).length, 
+                            json.filter((todo: any) => !todo.completed).length
                         ],
                         backgroundColor: [
                             'green', 

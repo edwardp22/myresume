@@ -5,7 +5,7 @@ import { IconButton } from '@material-ui/core';
 
 export default function TopBar(
     { isMenuClosed = false, toggleMenu } :
-    { isMenuClosed?: Boolean, toggleMenu: Function }
+    { isMenuClosed?: boolean, toggleMenu: Function }
 ) : JSX.Element {
     return (
         <IconButton size='medium' className={classes.menuButton} onClick={() => toggleMenu()}>
