@@ -1,14 +1,14 @@
 import React from 'react';
 import classes from './Menu.module.css';
-import PropTypes from 'prop-types';
 import Link from '../ALink/ALink';
 import { links } from './Links';
 
-Menu.propTypes = {
-    toggleMenu: PropTypes.func
-}
+export default function Menu(
+    { toggleMenu } :
+    { toggleMenu?: Function }
+): JSX.Element {
+    const onClickedLink = () : void => window.innerWidth < 600 && toggleMenu ? toggleMenu() : null;
 
-export default function Menu({ toggleMenu = ()=>{} }) {
     return (
         <ul className={classes.ul}>
             {links.map(link =>
@@ -16,10 +16,9 @@ export default function Menu({ toggleMenu = ()=>{} }) {
                     <Link
                         borderRadius='50px'
                         text={link.text}
-                        onClick={toggleMenu}
+                        onClick={onClickedLink}
                         icon={link.icon}
                         linkRoute={link.link}
-                        // active={activeLink === link.link}
                     />
                 </li>
             )}

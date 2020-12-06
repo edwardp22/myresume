@@ -3,18 +3,18 @@ import classes from './ALink.module.css';
 import { NavLink } from 'react-router-dom';
 
 export default function Link(
-    {text = '', icon = '', borderRadius = '0px', onClick, linkRoute = '#', active = false} :
-    {text?: string, icon?: string, borderRadius?: string, onClick?: Function, linkRoute?: string, active?: Boolean}
-): JSX.Element { 
+    { text = '', icon = '', borderRadius = '0px', onClick, linkRoute = '#', active = false } :
+    { text?: string, icon?: string, borderRadius?: string, onClick?: Function, linkRoute?: string, active?: Boolean }
+): JSX.Element {
     return (
         <NavLink
             style={{ borderRadius: borderRadius }}
             className={[classes.link, (active ? classes.active : '')].join(' ')}
-            onClick={() => window.innerWidth < 600 ? onClick ? onClick() : null : null}
+            onClick={() => onClick ? onClick() : null}
             to={linkRoute}
         >
             <i className={[classes.icon, 'material-icons'].join(' ')}>{icon}</i>
-            <div className={classes.text}>{text}</div> 
+            <div className={classes.text}>{text}</div>
         </NavLink>
     )
 };
