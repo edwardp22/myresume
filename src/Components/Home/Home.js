@@ -21,7 +21,8 @@ export default function Home() {
             <Grid container item xs={12} md={4} alignItems='center'>
                 <Grid item className={classes.data}>
                     {techIcons.map(icon =>
-                        <IconButton 
+                        <IconButton
+                            key={icon.alt}
                             size='medium'
                             onClick={() => window.open(icon.src, '_blank')}
                             className={classesIcons[icon.className]}

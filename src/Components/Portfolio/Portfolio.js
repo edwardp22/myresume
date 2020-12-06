@@ -1,27 +1,53 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import classes from './Portfolio.module.css';
-import MaterialTable from 'material-table';
 import { toast } from 'react-toastify';
 import { Grid } from '@material-ui/core';
-import { LinkedIn } from '@material-ui/icons';
+import MaterialTableCust from './MaterialTableCust';
+import Chartjs2Cust from './Chartjs2Cust';
 
 export default function Portfolio() {
-    const [isLoading, setIsLoading] = useState(false);
-    const [users, setUsers] = useState([]);
-    const [selectedUser, setSelectedUser] = useState(null);
+    const [isUserLoading, setIsUserLoading] = useState(false);
+    const [users, setUsers] = useState();
+    const [selectedUser, setSelectedUser] = useState();
+    const [todosGraph, setTodosGraph] = useState();
 
-    const getUsers = useCallback(async () => {
-        setIsLoading(true);
+    const getUsers = useCallback(() => {
+        setIsUserLoading(true);
 
         fetch('https://jsonplaceholder.typicode.com/users')
         .then(response => response.json())
-        .then(json => { setUsers(json); setIsLoading(false); })
-        .catch(error => { toast.error(error); setIsLoading(false); });
+        .then(json => { setUsers(json); setIsUserLoading(false); })
+        .catch(error => { toast.error(error); setIsUserLoading(false); });
     }, []);
 
     useEffect(() => {
         getUsers();
     }, [getUsers]);
+
+    useEffect(() => {
+        if (selectedUser) {
+            fetch(`https://jsonplaceholder.typicode.com/todos?userId=${selectedUser.id}`)
+            .then(response => response.json())
+            .then(json => { 
+                const graphState = {
+                    labels: ['Completed', 'Pending'],
+                    datasets: [{
+                        data: [
+                            json.filter(todo => todo.completed).length, 
+                            json.filter(todo => !todo.completed).length
+                        ],
+                        backgroundColor: [
+                            'green', 
+                            'red'
+                        ]
+                    }]
+                };
+
+                setTodosGraph(graphState);
+            })
+            .catch(error => { toast.error(error); });
+        }
+    }, [selectedUser]);
 
     return (
         <div className={classes.container}>
@@ -29,56 +55,20 @@ export default function Portfolio() {
 
             <Grid container spacing={1}>
                 <Grid item xs={12}>
-                    <p>Welcome to my online portfolio. Here you can browse throught some of the component implementations used in the diferent web applications designed by me.</p>
+                    <p>Welcome to my online portfolio. Here you can browse throught some of the component implementations used in the different web applications designed by me.</p>
                     <p>All of the data displayed here is fetched from <a href='https://jsonplaceholder.typicode.com/'>https://jsonplaceholder.typicode.com/</a>.</p>
                 </Grid>
 
-                <Grid item xs={12}>
-                    <h2>Material Table</h2>
-                    <p>Material table is an easy to use, independient component that make use of the table component in Material UI framework. Normally I use this component for tables, because it have some build in useful features that help to use less code.</p>
-                    <p>All of the features in Material Table can be implemented without this component, but we would need to code more.</p>
-                </Grid>
-                
-                <Grid item xs={12}>
-                    <MaterialTable
-                        title='Users'
-                        columns={[
-                            { type: 'string', title: 'Name', field: 'name', minWidth: 250 },
-                            { type: 'string', title: 'E-Mail', field: 'email', minWidth: 250 },
-                        ]}
-                        data={users}
-                        options={
-                            {
-                                headerStyle: {
-                                    color: '#800000',
-                                    fontSize: '12px',
-                                    fontWeight: 'bold'
-                                },
-                                rowStyle: {
-                                    fontSize: '12px'
-                                },
-                                grouping: false,
-                                filtering: true,
-                                paging: true,
-                                exportButton: true,
-                                search: true,
-                                showTitle: true,
-                                tableLayout: 'auto',
-                                columnsButton: true,
-                                sorting: true,
-                                draggable: true
-                            }
-                        }
-                        actions={[
-                            {
-                                icon: 'show_chart',
-                                tooltip: 'Show Charts',
-                                onClick: (event, rowData) => setSelectedUser(rowData)
-                            }
-                        ]}
-                        isLoading={isLoading}
-                    />
-                </Grid>
+                <MaterialTableCust 
+                    data={users} 
+                    isLoading={isUserLoading}
+                    setSelectedUser={setSelectedUser}
+                />
+
+                <Chartjs2Cust 
+                    data={todosGraph}
+                    selectedUser={selectedUser}
+                />
             </Grid>
         </div>
     )
