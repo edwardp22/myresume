@@ -3,7 +3,7 @@ import { Grid } from '@material-ui/core';
 import { Doughnut } from 'react-chartjs-2';
 
 export default function Chartjs2Cust(
-    { data = {}, selectedUser = {} } :
+    { data = { labels: ['No Data'], datasets: [{ data: [1] }] }, selectedUser = {} } :
     { data?: any, selectedUser?: any }
 ) {
     return (
@@ -16,7 +16,7 @@ export default function Chartjs2Cust(
 
             <Grid item xs={12}>
                 <h3>{JSON.stringify(selectedUser) !== '{}' ? `${selectedUser.name}'s Todos` : 'Please select user'}</h3>
-                <Doughnut 
+                <Doughnut
                     data={data}
                 />
             </Grid>
