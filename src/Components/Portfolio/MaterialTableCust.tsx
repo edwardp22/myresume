@@ -3,10 +3,9 @@ import MaterialTable from 'material-table';
 import { Grid } from '@material-ui/core';
 
 export default function MaterialTableCust(
-    { data = [], isLoading = false, setSelectedUser } 
-    // :
-    // { data?: any[], isLoading?: boolean, setSelectedUser: Function }
-) {
+    { data = [], isLoading = false, setSelectedUser } :
+    { data?: any[], isLoading?: boolean, setSelectedUser: Function }
+) : JSX.Element {
     return (
         <>
             <Grid item xs={12}>
@@ -19,8 +18,8 @@ export default function MaterialTableCust(
                 <MaterialTable
                     title='Users'
                     columns={[
-                        { type: 'string', title: 'Name', field: 'name', minWidth: 250 },
-                        { type: 'string', title: 'E-Mail', field: 'email', minWidth: 250 },
+                        { type: 'string', title: 'Name', field: 'name' },
+                        { type: 'string', title: 'E-Mail', field: 'email' },
                     ]}
                     data={data}
                     options={
@@ -49,7 +48,7 @@ export default function MaterialTableCust(
                         {
                             icon: 'show_chart',
                             tooltip: 'Show Charts',
-                            onClick: (event, rowData) => setSelectedUser(rowData)
+                            onClick: (_event: any, rowData: any) => setSelectedUser(rowData)
                         }
                     ]}
                     isLoading={isLoading}
