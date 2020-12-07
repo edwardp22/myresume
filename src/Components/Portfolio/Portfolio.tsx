@@ -5,7 +5,7 @@ import { Grid } from '@material-ui/core';
 import MaterialTableCust from './MaterialTableCust';
 import Chartjs2Cust from './Chartjs2Cust';
 
-export default function Portfolio() {
+export default function Portfolio() : JSX.Element {
     const [isUserLoading, setIsUserLoading] = useState<boolean>(false);
     const [users, setUsers] = useState<any[]>();
     const [selectedUser, setSelectedUser] = useState<any>();

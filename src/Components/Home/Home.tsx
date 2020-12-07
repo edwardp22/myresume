@@ -5,7 +5,7 @@ import { LinkedIn } from '@material-ui/icons';
 import { IconButton, Grid } from '@material-ui/core';
 import { techIcons } from './Icons';
 
-export default function Home() {
+export default function Home() : JSX.Element {
     return (
         <Grid container className={classes.container}>
             <Grid container item xs={12} md={8} alignItems='center'>
