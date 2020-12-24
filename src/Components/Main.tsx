@@ -5,7 +5,7 @@ import Layout from './Layout/Layout';
 import Home from './Home/Home';
 import Portfolio from './Portfolio/Portfolio';
 
-const Main = () : JSX.Element => {
+const Main = () => {
     return (
         <Layout>
             <ToastContainer />

@@ -6,7 +6,7 @@ import { links } from './Links';
 export default function Menu(
     { toggleMenu } :
     { toggleMenu?: () => void }
-): JSX.Element {
+) {
     const onClickedLink = () : void => window.innerWidth < 600 && toggleMenu ? toggleMenu() : undefined;
 
     return (

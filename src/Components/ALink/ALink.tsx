@@ -5,7 +5,7 @@ import { NavLink } from 'react-router-dom';
 export default function Link(
     { text = '', icon = '', borderRadius = '0px', onClick, linkRoute = '#', active = false } :
     { text?: string, icon?: string, borderRadius?: string, onClick?: () => void, linkRoute?: string, active?: boolean }
-): JSX.Element {
+) {
     return (
         <NavLink
             style={{ borderRadius: borderRadius }}

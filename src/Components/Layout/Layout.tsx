@@ -6,7 +6,7 @@ import Menu from '../Menu/Menu';
 export default function Layout(
     { children } :
     { children: React.ReactNode }
-) : JSX.Element {
+) {
     const [isMenuClosed, setIsMenuClosed] = useState(true);
 
     useEffect(() => {

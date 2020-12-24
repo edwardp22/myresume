@@ -5,11 +5,11 @@ import { Grid } from '@material-ui/core';
 import MaterialTableCust from './MaterialTableCust';
 import Chartjs2Cust from './Chartjs2Cust';
 
-export default function Portfolio() : JSX.Element {
-    const [isUserLoading, setIsUserLoading] = useState<boolean>(false);
-    const [users, setUsers] = useState<any[]>();
-    const [selectedUser, setSelectedUser] = useState<any>();
-    const [todosGraph, setTodosGraph] = useState<any>();
+export default function Portfolio() {
+    const [isUserLoading, setIsUserLoading] = useState(false);
+    const [users, setUsers] = useState([]);
+    const [selectedUser, setSelectedUser] = useState<{ id: number, name: string, email: string }>();
+    const [todosGraph, setTodosGraph] = useState<{ labels: string[], datasets: object[] }>();
 
     const getUsers = useCallback(() => {
         setIsUserLoading(true);
@@ -29,7 +29,7 @@ export default function Portfolio() : JSX.Element {
             fetch(`https://jsonplaceholder.typicode.com/todos?userId=${selectedUser.id}`)
             .then(response => response.json())
             .then((json: any[]) => { 
-                const graphState: any = {
+                const graphState = {
                     labels: ['Completed', 'Pending'],
                     datasets: [{
                         data: [
