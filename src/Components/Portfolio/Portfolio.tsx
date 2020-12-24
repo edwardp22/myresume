@@ -4,6 +4,7 @@ import { toast } from 'react-toastify';
 import { Grid } from '@material-ui/core';
 import MaterialTableCust from './MaterialTableCust';
 import Chartjs2Cust from './Chartjs2Cust';
+import BarCode from './BarCode';
 
 export default function Portfolio() {
     const [isUserLoading, setIsUserLoading] = useState(false);
@@ -69,6 +70,8 @@ export default function Portfolio() {
                     data={todosGraph}
                     selectedUser={selectedUser}
                 />
+
+                <BarCode selectedUser={selectedUser} />
             </Grid>
         </div>
     )
