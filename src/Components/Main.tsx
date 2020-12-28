@@ -4,6 +4,7 @@ import { ToastContainer } from 'react-toastify';
 import Layout from './Layout/Layout';
 import Home from './Home/Home';
 import Portfolio from './Portfolio/Portfolio';
+import Components from './Components/Components';
 
 const Main = () => {
     return (
@@ -13,6 +14,7 @@ const Main = () => {
             <Switch>
                 <Route exact path='/Home' component={Home} />
                 <Route exact path='/Portfolio' component={Portfolio} />
+                <Route exact path='/Components' component={Components} />
                 <Redirect to='/Home' />
             </Switch>
         </Layout>

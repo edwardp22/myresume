@@ -15,6 +15,11 @@ export const links = [
         link: '/Portfolio'
     },
     {
+        text: 'Components',
+        icon: 'group_work',
+        link: '/Components'
+    },
+    {
         text: 'This Page',
         icon: 'build',
         link: '/Page'
