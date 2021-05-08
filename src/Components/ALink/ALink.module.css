@@ -1,25 +1,29 @@
 .link {
-    color: black;
-    background-color: #f2f3f5;
-    text-decoration: none;
-    margin-bottom: 8px;
-    border: 1px solid rgb(150, 150, 150);
-    display: flex;
-    height: 45px;
-    /* width: 150px; */
-    line-height: 45px;
+  color: black !important;
+  background-color: #f2f3f5 !important;
+  text-decoration: none !important;
+  margin-bottom: 8px !important;
+  border: 1px solid rgb(150, 150, 150) !important;
+  display: flex !important;
+  height: 45px !important;
+  border-radius: 50px !important;
+  line-height: 45px !important;
 }
 
 .link:hover {
-    background-color: #0563bb; 
-    color: white;
+  background-color: #0563bb !important;
+  color: white !important;
 }
 
 .active {
-    background-color: #0563bb; 
-    color: white;
+  background-color: #0563bb !important;
+  color: white !important;
 }
 
 .icon {
-    padding: 10px;
+  min-width: 32px !important;
+}
+
+.iconWhite {
+  color: white;
 }

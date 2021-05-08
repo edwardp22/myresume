@@ -1,32 +1,35 @@
+import React from "react";
+import { Build, ContactMail, GroupWork, Home, LibraryBooks, Work } from "@material-ui/icons";
+
 export const links = [
     {
         text: 'Home',
-        icon: 'home',
+        icon: <Home /> ,
         link: '/Home'
     },
     {
         text: 'Resume',
-        icon: 'library_books',
+        icon: <LibraryBooks />,
         link: '/Resume'
     },
     {
         text: 'Portfolio',
-        icon: 'work',
+        icon: <Work />,
         link: '/Portfolio'
     },
     {
         text: 'Components',
-        icon: 'group_work',
+        icon: <GroupWork />,
         link: '/Components'
     },
     {
         text: 'This Page',
-        icon: 'build',
+        icon: <Build />,
         link: '/Page'
     },
     {
         text: 'Contact',
-        icon: 'contact_mail',
+        icon: <ContactMail />,
         link: '/Contact'
     }
 ]

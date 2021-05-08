@@ -1,27 +1,16 @@
-import React from 'react';
-import classes from './Menu.module.css';
-import Link from '../ALink/ALink';
-import { links } from './Links';
+import React from "react";
+import Link from "../ALink/ALink";
+import { links } from "./Links";
+import { List } from "@material-ui/core";
 
-export default function Menu(
-    { toggleMenu } :
-    { toggleMenu?: () => void }
-) {
-    const onClickedLink = () : void => window.innerWidth < 600 && toggleMenu ? toggleMenu() : undefined;
+export default function Menu({ toggleMenu }: { toggleMenu?: () => void }) {
+  const onClickedLink = (): void => (window.innerWidth < 600 && toggleMenu ? toggleMenu() : undefined);
 
-    return (
-        <ul className={classes.ul}>
-            {links.map(link =>
-                <li key={link.text}>
-                    <Link
-                        borderRadius='50px'
-                        text={link.text}
-                        onClick={onClickedLink}
-                        icon={link.icon}
-                        linkRoute={link.link}
-                    />
-                </li>
-            )}
-        </ul>
-    )
+  return (
+    <List>
+      {links.map((link) => (
+        <Link key={link.text} text={link.text} onClick={onClickedLink} icon={link.icon} linkRoute={link.link} />
+      ))}
+    </List>
+  );
 }
