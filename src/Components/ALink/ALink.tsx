@@ -1,6 +1,6 @@
 import React from "react";
 import classes from "./ALink.module.css";
-import { useHistory, useLocation } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import { ListItem, ListItemIcon, ListItemText } from "@material-ui/core";
 
 export default function Link({
@@ -15,7 +15,7 @@ export default function Link({
   linkRoute?: string;
 }) {
   const location = useLocation();
-  const history = useHistory();
+  const navigate = useNavigate();
 
   return (
     <ListItem
@@ -24,10 +24,14 @@ export default function Link({
       classes={{ root: classes.link, selected: classes.active }}
       onClick={() => {
         if (onClick) onClick();
-        history.push(linkRoute);
+        navigate(linkRoute);
       }}
     >
-      <ListItemIcon className={`${classes.icon} ${location.pathname === linkRoute ? classes.iconWhite : ""}`}>
+      <ListItemIcon
+        className={`${classes.icon} ${
+          location.pathname === linkRoute ? classes.iconWhite : ""
+        }`}
+      >
         {icon}
       </ListItemIcon>
       <ListItemText className={classes.text} primary={text} />

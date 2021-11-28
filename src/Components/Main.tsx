@@ -1,28 +1,27 @@
-import React from 'react';
-import { Switch, Route, Redirect, withRouter } from 'react-router-dom';
-import { CssBaseline } from '@material-ui/core';
-import { ToastContainer } from 'react-toastify';
-import Layout from './Layout/Layout';
-import Home from './Home/Home';
-import Portfolio from './Portfolio/Portfolio';
-import Components from './Components/Components';
+import React from "react";
+import { Routes, Route } from "react-router-dom";
+import { CssBaseline } from "@material-ui/core";
+import { ToastContainer } from "react-toastify";
+import Layout from "./Layout/Layout";
+import Home from "./Home/Home";
+import Portfolio from "./Portfolio/Portfolio";
+import Components from "./Components/Components";
 
-const Main = () => {
-    return (
-        <>
-            <CssBaseline />
-            <Layout>
-                <ToastContainer />
+export default function Main() {
+  return (
+    <>
+      <CssBaseline />
+      <Layout>
+        <ToastContainer />
 
-                <Switch>
-                    <Route exact path='/Home' component={Home} />
-                    <Route exact path='/Portfolio' component={Portfolio} />
-                    <Route exact path='/Components' component={Components} />
-                    <Redirect to='/Home' />
-                </Switch>
-            </Layout>
-        </>
-    )
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="myresume" element={<Home />} />
+          <Route path="Home" element={<Home />} />
+          <Route path="Portfolio" element={<Portfolio />} />
+          <Route path="Components" element={<Components />} />
+        </Routes>
+      </Layout>
+    </>
+  );
 }
-
-export default withRouter(Main);
