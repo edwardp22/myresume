@@ -34,7 +34,7 @@ const projects: IProject[] = [
       { alt: "login", image: DB3 },
     ],
     description: {
-      title: "Perosnal SQL Server Example DB",
+      title: "Personal SQL Server Example DB",
       description: `Example DB showing managing and developing skills in SQL Server. 
       
 Server: edwardpena.database.windows.net 

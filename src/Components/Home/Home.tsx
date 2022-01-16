@@ -1,7 +1,7 @@
 import React from "react";
 import classes from "./Home.module.css";
 import classesIcons from "./Icons.module.css";
-import { LinkedIn } from "@material-ui/icons";
+import { DesktopWindows, GitHub, LinkedIn } from "@material-ui/icons";
 import { IconButton, Grid } from "@material-ui/core";
 import { techIcons } from "./Icons";
 
@@ -23,6 +23,29 @@ export default function Home() {
             }
           >
             <LinkedIn fontSize="medium" />
+          </IconButton>
+
+          <IconButton
+            size="small"
+            className={classesIcons.linkedin}
+            onClick={() =>
+              window.open("https://github.com/edwardp22", "_blank")
+            }
+          >
+            <GitHub fontSize="medium" />
+          </IconButton>
+
+          <IconButton
+            size="small"
+            className={classesIcons.linkedin}
+            onClick={() =>
+              window.open(
+                "https://docs.microsoft.com/en-us/users/edwardpenaespinal/",
+                "_blank"
+              )
+            }
+          >
+            <DesktopWindows fontSize="medium" />
           </IconButton>
         </Grid>
       </Grid>
