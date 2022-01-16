@@ -12,8 +12,9 @@ export default function Portfolio() {
       <Grid container spacing={1}>
         <Grid item xs={12}>
           <p>
-            Welcome to my online portfolio. Here you can browse throught my
-            projects, some personal and some working in companies.
+            Welcome to my online portfolio. Here you can browse through my
+            projects, some personal and some collaborations to projects from
+            previous employers.
           </p>
         </Grid>
 
