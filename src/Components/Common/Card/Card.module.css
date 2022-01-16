@@ -1,3 +1,25 @@
 .root {
   border-radius: 5px;
+  min-height: 400px;
+}
+
+.root p {
+  white-space: break-spaces;
+}
+
+.root img {
+  max-height: 120px;
+  min-height: 120px;
+  object-fit: contain;
+}
+
+.root > div:nth-child(2) {
+  max-height: 230px;
+  min-height: 230px;
+  overflow-y: auto;
+}
+
+.root > div:nth-child(3) {
+  max-height: 50px;
+  min-height: 50px;
 }

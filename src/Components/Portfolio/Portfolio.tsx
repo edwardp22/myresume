@@ -18,7 +18,7 @@ export default function Portfolio() {
         </Grid>
 
         {projects.map((project) => (
-          <Grid item xs={12} sm={4} key={project.description.title}>
+          <Grid item xs={12} md={4} key={project.description.title}>
             <Card project={project} />
           </Grid>
         ))}
