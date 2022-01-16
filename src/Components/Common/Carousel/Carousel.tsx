@@ -1,5 +1,7 @@
 import React from "react";
 import { Carousel as CarouselReact } from "react-responsive-carousel";
+import Zoom from "react-medium-image-zoom";
+import "react-medium-image-zoom/dist/styles.css";
 
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 
@@ -25,7 +27,13 @@ export default function Carousel({
         {items.map((item) => (
           <div key={item.alt}>
             {item.image ? (
-              <img src={item.image} alt={item.alt} style={{ height: "100%" }} />
+              <Zoom>
+                <img
+                  src={item.image}
+                  alt={item.alt}
+                  style={{ height: "100%" }}
+                />
+              </Zoom>
             ) : null}
           </div>
         ))}
