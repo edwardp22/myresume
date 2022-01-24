@@ -20,7 +20,8 @@ const projects: IProject[] = [
       title: "Continuo",
       description: `Administration and financial management web application created for the market of the Dominican Republic.
         
-Previous employer web application in wich I was the main responsible.`,
+* Previous employer web application in wich I was the main responsible.
+* With 2 other developers we analysed, designed, coded and implemented this solution.`,
     },
     links: [
       {
@@ -38,12 +39,9 @@ Previous employer web application in wich I was the main responsible.`,
     ],
     description: {
       title: "Personal SQL Server Example DB",
-      description: `Example DB showing managing and developing skills in SQL Server. 
-      
-Connection information:
-Server: edwardpena.database.windows.net 
-User: readonlyuser 
-password: TestUser123*`,
+      description: `Example DB showing managing and developing skills in SQL Server.
+
+* Implementing primary and foreing keys, views and stored procedures.`,
     },
     links: [],
   },
@@ -56,9 +54,9 @@ password: TestUser123*`,
       title: "Personal Application Server",
       description: `Example server application showing skills in node.js, express, mssql.
 
-Implementing Azure DevOps Pipeline for CI/CD.
-      
-Database from Personal SQL Server Example DB.`,
+* Implementing Azure DevOps Pipeline for CI/CD.      
+* Database from Personal SQL Server Example DB.
+* Implementing express.js, mssql connector.`,
     },
     links: [
       {
